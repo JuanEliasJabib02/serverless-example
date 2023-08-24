@@ -16,6 +16,11 @@ const dummieData = {
 export type DataProducts = typeof dummieData;
 
 function App() {
+  const getProducts = () => {
+    //make logic for get products from the api
+
+    console.log("click");
+  };
   return (
     <>
       <div className="relative overflow-x-auto h-screen bg-black py-20 flex flex-col items-center">
@@ -23,16 +28,16 @@ function App() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Product name
+                ID
               </th>
               <th scope="col" className="px-6 py-3">
-                Color
+                Nombre
               </th>
               <th scope="col" className="px-6 py-3">
-                Category
+                Descripcion
               </th>
               <th scope="col" className="px-6 py-3">
-                Price
+                Meta tag
               </th>
               <th scope="col" className="px-6 py-3">
                 Estado
@@ -44,7 +49,10 @@ function App() {
               <ProductList data={dummieData} key={i} />
             ))}
           </tbody>
-          <div className="shadow-lg rounded-md bg-green-500 transition-all  hover:bg-green-700 absolute right-0 mt-2">
+          <div
+            className="shadow-lg rounded-md bg-green-500 transition-all  hover:bg-green-700 absolute right-0 mt-2"
+            onClick={getProducts}
+          >
             <button className="px-4 py-2  text-black/80 font-bold text-base ">
               Actualizar
             </button>
